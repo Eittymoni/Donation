@@ -127,11 +127,11 @@ document.getElementById("history-section").classList.remove("hidden")
 // for modal
 
  function validateAndDonate() {
-    const noakhaliDonationInput = parseFloat(document.getElementById('noakhali-donation-amount').value); // Parse input as a number
-    const feniDonationInput = parseFloat(document.getElementById('feni-donation-amount').value); // Parse input as a number
-    const quotaProtestDonationInput = parseFloat(document.getElementById('quota-protest-donation-amount').value); // Parse input as a number
+    const noakhaliDonationInput = parseFloat(document.getElementById('noakhali-donation-amount').value); 
+    const feniDonationInput = parseFloat(document.getElementById('feni-donation-amount').value); 
+    const quotaProtestDonationInput = parseFloat(document.getElementById('quota-protest-donation-amount').value); 
     
-    // Validate donation input
+    
     if (
         (isNaN(noakhaliDonationInput) || noakhaliDonationInput <= 0) &&
         (isNaN(feniDonationInput) || feniDonationInput <= 0) &&

@@ -9,30 +9,102 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+<style>
+  .lexend-font{
+    font-family: "Lexend", sans-serif;
+}
 
+</style>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+            'primary-color':'#B4F461',
+            'secondary-color':'rgba(17, 17, 17, 0.7)',
+            'third-color':'rgba(17, 17, 17, 0.05)',
+
+           
+          },
+       
+        }
+      }
+    }
+  </script>
 </head>
-<body>
-    <div class="collapse collapse-arrow bg-base-200">
-        <input type="radio" name="my-accordion-2" checked="checked" />
-        <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
-        <div class="collapse-content">
-          <p>hello</p>
+<body class="lexend-font">
+
+  <header class="sticky top-0 z-10">
+
+    <div class="bg-[#F9F7F3]">
+    <div class="navbar container mx-auto flex flex-wrap items-center justify-between py-4">
+    
+      <div class="navbar-start w-full md:w-auto flex justify-center md:justify-start mb-4 md:mb-0">
+        <button class="bg-primary-color text-[#111111] py-[12px] px-[32px] rounded-[8px] md:text-xl font-bold text-base">
+          <a href="blog.html" target="_blank">Blog</a>
+        </button>
+      </div>
+  
+     
+      <div class="navbar-center w-full md:w-auto flex justify-center items-center mb-4 md:mb-0">
+        <div>
+          <img src="/assets/logo.png" alt="Logo" class="h-8 md:h-12">
+        </div>
+        <div>
+          <p class="text-[#111111] md:text-xl text-base pl-2 font-bold">Donate Bangladesh</p>
         </div>
       </div>
-      <div class="collapse collapse-arrow bg-base-200">
-        <input type="radio" name="my-accordion-2" />
-        <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
-        <div class="collapse-content">
-          <p>hello</p>
+  
+     
+      <div class="navbar-end w-full md:w-auto flex justify-center md:justify-end items-center">
+        <div>
+          <img src="/assets/coin.png" alt="Coin" class="h-6 md:h-8">
         </div>
+        <div id="amount" class="text-secondary-color md:text-xl text-base font-bold pl-2">5000 <span class=" text-secondary-color text-xl"> BDT</span> </div>
+        <p id="amountBalance" class="text-red-500 text-xs mt-1 hidden">
+          ⚠️ You have no Enough Balance!
+        </p>
       </div>
-      <div class="collapse collapse-arrow bg-base-200">
-        <input type="radio" name="my-accordion-2" />
-        <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
-        <div class="collapse-content">
-          <p>hello</p>
-        </div>
-      </div>
+      
+    </div>
+    </div>
+
+  </header>
+
+<main class="container mx-auto text-center mt-8">
+  <div class="collapse collapse-arrow">
+    <input type="radio" name="my-accordion-2" checked="checked" />
+    <div class="collapse-title text-xl font-medium">1.What is the Document Object Model (DOM)?</div>
+    <div class="collapse-content">
+      <p>The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of an HTML or XML document as a tree of objects, allowing developers to manipulate the content, structure, and style of a webpage dynamically using JavaScript.</p>
+    </div>
+  </div>
+  <div class="collapse collapse-arrow ">
+    <input type="radio" name="my-accordion-2" />
+    <div class="collapse-title text-xl font-medium">2.How do you select an element from the DOM?</div>
+    <div class="collapse-content">
+      <p> document.getElementById("id"),document.querySelector("selector"), document.querySelectorAll("selector"), document.getElementsByTagName("tagName"),document.getElementsByClassName("className")</p>
+    </div>
+  </div>
+  <div class="collapse collapse-arrow ">
+    <input type="radio" name="my-accordion-2" />
+    <div class="collapse-title text-xl font-medium">3.What is event delegation in the context of the DOM, and why is it useful?</div>
+    <div class="collapse-content">
+      <p>Event delegation is a technique where a single event listener is added to a parent element to manage events for its child elements.It is useful because: Reduces the number of event listeners, Automatically handles newly added child elements</p>
+    </div>
+  </div>
+  <div class="collapse collapse-arrow">
+    <input type="radio" name="my-accordion-2" />
+    <div class="collapse-title text-xl font-medium">4.How do you manipulate an element's attributes and styles using the DOM?</div>
+    <div class="collapse-content">
+      <p>element.setAttribute("attr", "value"), element.getAttribute("attr"), element.removeAttribute("attr").element.style.property = "value" or element.classList.add/remove/toggle("class")</p>
+    </div>
+  </div>
+</main>
+
+
+    
     
 </body>
 </html>
