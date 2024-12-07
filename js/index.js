@@ -5,7 +5,7 @@ const updateDonation = (donationId, inputId) => {
     const donationInput = parseFloat(document.getElementById(inputId).value);
     const currentDonation = parseFloat(document.getElementById(donationId).innerText);
     
-console.log(donationInput);
+
     
 
    
@@ -13,18 +13,22 @@ console.log(donationInput);
     //     document.getElementById(errorId).classList.remove("hidden");
     //     return;
     // }
-    if (donationInput <= 0 || isNaN(donationInput)) {
-        alert("Invalid donation amount! Please enter a valid amount greater than 0.");
-       
-        return;
-    }
+    // if (donationInput <= 0 || isNaN(donationInput)) {
+    //     alert("Invalid donation amount! Please enter a valid amount greater than 0.");
+    //     return;
+    // }
 
     
 
-    if (totalAmount <= 0 || donationInput > totalAmount) {
-        alert("Donation amount exceeds the available balance or is invalid. Please enter a valid amount.");
-        return;
-    }
+    // if (totalAmount <= 0 || donationInput >= totalAmount) {
+    //     alert("Donation amount exceeds the available balance or is invalid. Please enter a valid amount.");
+    //     return;
+    // }
+    // if (donationInput <= 0 || isNaN(donationInput) || totalAmount <= 0 || donationInput >= totalAmount) {
+    //     alert("Invalid or excessive donation amount! Please enter a valid amount.");
+    //     return;
+    // }
+    
     
     const updatedDonation = currentDonation + donationInput;
     
@@ -63,11 +67,11 @@ document.getElementById("noakhali-donation-button").addEventListener("click", fu
     event.preventDefault();
     const donationAmount = parseFloat(document.getElementById("noakhali-donation-amount").value);
 
-    if (donationAmount > 0 && donationAmount<totalAmount ) {
+    if (donationAmount > 0 && donationAmount <= totalAmount ) {
         updateDonation("noakhali-donation", "noakhali-donation-amount", "amount-error");
         addHistory(donationAmount, "Flood at Noakhali, Bangladesh");
     } else {
-        alert("Invalid donation amount! Please enter a valid amount greater than 0.");
+        alert("Invalid or excessive donation amount! Please enter a valid amount.");
     }
 });
 
@@ -75,11 +79,11 @@ document.getElementById("feni-donation-button").addEventListener("click", functi
     event.preventDefault();
     const donationAmount = parseFloat(document.getElementById("feni-donation-amount").value);
 
-    if (donationAmount > 0 && donationAmount<totalAmount ) {
+    if (donationAmount > 0 && donationAmount<= totalAmount ) {
         updateDonation("feni-donation", "feni-donation-amount", "feni-amount-error");
         addHistory(donationAmount, "Flood Relief in Feni, Bangladesh");
     } else {
-        alert("Invalid donation amount! Please enter a valid amount greater than 0.");
+        alert("Invalid or excessive donation amount! Please enter a valid amount.");
     }
 });
 
@@ -87,11 +91,11 @@ document.getElementById("quota-protest-donation-button").addEventListener("click
     event.preventDefault();
     const donationAmount = parseFloat(document.getElementById("quota-protest-donation-amount").value);
 
-    if (donationAmount > 0 && donationAmount<totalAmount ) {
+    if (donationAmount > 0 && donationAmount <= totalAmount ) {
         updateDonation("quota-protest-donation", "quota-protest-donation-amount", "quota-protest-amount-error");
         addHistory(donationAmount, "Aid for Injured in the Quota Movement");
     } else {
-        alert("Invalid donation amount! Please enter a valid amount greater than 0.");
+        alert("Invalid or excessive donation amount! Please enter a valid amount.");
     }
 });
 
@@ -142,9 +146,9 @@ document.getElementById("history-section").classList.remove("hidden")
         return; 
     }
     if (
-        (noakhaliDonationInput > totalAmount) ||
-        (feniDonationInput > totalAmount) ||
-        (quotaProtestDonationInput > totalAmount)
+        (noakhaliDonationInput >= totalAmount) ||
+        (feniDonationInput >= totalAmount) ||
+        (quotaProtestDonationInput >= totalAmount)
     ) {
         
         return;
